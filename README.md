@@ -4,4 +4,4 @@
 bison -d robo.y
 flex robo.l
 gcc -o robo robo.tab.c lex.yy.c
-./robo program.rs testfile.txt
+./robo testfile.rs
