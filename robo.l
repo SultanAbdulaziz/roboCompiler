@@ -10,7 +10,7 @@ int lexicalError = 0;
 %option noyywrap
 %option yylineno
 
-id [a-zA-Z_][a-zA-Z0-9_]*
+id [a-z][a-zA-Z0-9_]*
 num [0-9]+(\.[0-9]+)?
 text '[^'\n]*'
 whitespace [ \t\n]+
@@ -65,7 +65,8 @@ whitespace [ \t\n]+
                     strcpy(yylval.String, yytext);
                     return TEXT_LITERAL; 
                }
-{whitespace}   { /* skip whitespace */ }
+"{"[^}]*"}"    { }
+{whitespace}   { }
 .              { 
                     printf("Lexical error at line %d: invalid character '%s'\n", yylineno, yytext);
                     lexicalError = 1;
