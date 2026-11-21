@@ -13,7 +13,7 @@ int lexicalError = 0;
 id [a-z][a-zA-Z0-9_]*
 num [0-9]+(\.[0-9]+)?
 text '[^'\n]*'
-whitespace [ \t\n]+
+whitespace [ \t\r\n]+
 
 
 %%
